@@ -1,4 +1,3 @@
-
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -19,15 +18,22 @@ int main(){
     int arr[n+1],p[n+1];
     memset(arr,0,sizeof(arr));
 
-    
+
     int val=1;
     while(!q.empty()){
         int u=q.front();
         q.pop();
         val=1;
+        int temp=0;
         for(auto v:adj[u]){
             if(!visited[v]){
-                        if(arr[u]==val){val++;arr[v]=val;}
+                        if(arr[u]==val && u>0){temp=1;}
+                        if(temp==1){
+
+                            val++;
+
+                            arr[v]=val;
+                        }
                         else{
                             arr[v]=val;
                             val++;
