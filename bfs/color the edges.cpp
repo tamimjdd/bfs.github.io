@@ -14,11 +14,12 @@ int main(){
     queue<int>q;
     q.push(0);
     bool visited[n];
+    memset(visited,false,sizeof(visited));
     visited[0]=true;
     int arr[n+1],p[n+1];
     memset(arr,0,sizeof(arr));
 
-    memset(visited,false,sizeof(visited));
+    
     int val=1;
     while(!q.empty()){
         int u=q.front();
